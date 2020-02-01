@@ -1,0 +1,11 @@
+- hosts: all
+  tasks: 
+  - name: Fetch file from remote server
+    fetch:
+      src: "{{ item }}"
+      dest: /home/manish/maniish/Files/
+      flat: 
+    with_items:
+        - /root/lynis-master/lynis
+        - /root/lynis-master/FAQ
+        - /root/lynis-master/HAPPY_USERS.md

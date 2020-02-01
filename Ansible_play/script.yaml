@@ -1,0 +1,4 @@
+- hosts: all
+  tasks:
+   - name: run script on Remote
+     script: /home/manish/maniish/ma.sh

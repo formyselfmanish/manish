@@ -1,0 +1,15 @@
+- hosts: all
+  become: yes
+  become_user: root
+  become_method: su
+  tasks:
+
+   -  name: make changes in file
+      lineinfile:
+         path: /etc/zabbix/zabbix_agentd.conf
+         regexp: '{{item.From}}'
+         line:  '{{item.To}}'
+      with_items:
+         - { From: '^ServerActive=', To: 'ServerActive=10.17.128.217'}
+         - { From: '^Server=', To: 'Server=10.17.128.217'}
+

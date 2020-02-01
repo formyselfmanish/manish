@@ -1,0 +1,7 @@
+- hosts: all
+  tasks:
+  - name: copy file
+    copy:
+     src: /home/manish/maniish/lynis-master
+     dest: /root/
+     mode: preserve

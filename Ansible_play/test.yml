@@ -1,0 +1,11 @@
+- hosts: all
+  tasks: 
+   - name: Testing
+     file:
+        path: /Become
+        state: directory
+        owner: manish
+        group: manish
+     become: yes
+     become_user: root
+     become_method: su

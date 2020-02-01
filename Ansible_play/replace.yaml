@@ -1,0 +1,9 @@
+- hosts: all
+  tasks:
+   - name: replace task using regex
+     replace:
+       path: /root/anaconda-ks.cfg
+       after: 'network  --hostname=localhost.localdomain'
+       regexp: '^(.+)$'
+       replace: '# \1'
+
